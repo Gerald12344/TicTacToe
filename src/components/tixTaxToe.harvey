@@ -1,0 +1,20 @@
+<iWant "src/components/board.harvey">
+
+<hookFunction tixTaxToe <body
+    <letsmake <split One useOne> <useHook <string "">>>
+    <letsmake <split Two useTwo> <useHook <string "">>>
+    <letsmake <split Three useThree> <useHook <string "">>>
+    <letsmake <split Four useFour> <useHook <string "">>>
+    <letsmake <split Five useFive> <useHook <string "">>>
+    <letsmake <split Six useSix> <useHook <string "">>>
+    <letsmake <split Seven useSeven> <useHook <string "">>>
+    <letsmake <split Eight useEight> <useHook <string "">>>
+    <letsmake <split Nine useNine> <useHook <string "">>>
+
+    <letsmake arrayTosend <array One Two Three Four Five Six Seven Eight Nine>>
+
+    <render <string "body">
+        <hOne <string "Welcome To Tix Tax Toe!">>
+        <call board parent arrayTosend>
+    >
+>>

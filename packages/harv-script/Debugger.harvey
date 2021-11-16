@@ -1,0 +1,145 @@
+<function Debugger val <body
+    <assign window.onerror <Arrowfunc error url line <body
+        <if val <body
+            <sendOut <add <string "%c[Harv-Script]"> <string "%c - Error occurred that could not be dismissed!\n"> <add <string "%c"> <var error>>> <string "color:#00B5E2"> <string "color:white"> <string "color:light-grey;text-decoration:underline;font-weight:bold">>
+            <letsmake objectTosend <object>>
+            <assign objectTosend.data <var error>>
+            <assign objectTosend <call JSON.stringify <var objectTosend>>>
+            <call makeAjaxRequest <add window.location.origin <string "/api/error">> <string "POST"> <var objectTosend>>
+            
+
+            
+            <render <string "body">
+                <div <empty> <string "Error-Boundrary">
+                    <div <empty> <empty>
+
+                        <hOne <string "An Error Occured During Run-Time That Could Not Be Dismissed!"> <empty>>
+                        <hTwo <var error> <string "gapBelow">>
+
+                    >   
+
+                    <style <scss "
+                        @import url(`https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap`);
+                        .gapBelow{
+                            margin-bottom:60px;
+                        }
+
+                        .Error-Boundrary {
+                            text-align: center;
+                            & > h2 {
+                                font-family: Source Code Pro, monospace;
+                                font-weight:200;
+                            }
+                            height:100vh;
+                            width:100vw;
+                            position:fixed;
+                            z-index:1000000000;
+                            color:black;
+                            text-align:center;
+                            text-transform: none;
+                            top:0;
+                            justify-content:center;
+                            align-items:center;
+                            background-color: rgba(0,0,0,0.8);
+                            white-space:pre;
+
+                            display:flex;
+                            & > div {
+                                text-align:center;
+                                height:80vh;
+                                background-color:white;
+                                width:80vw;
+                                border-radius:16px;
+                                display:flex;
+                                flex-direction:column;
+                                justify-content:center;
+                            }
+                        }
+                    ">>
+                >
+            >
+
+        >>
+    >>>
+>>
+<letsmake error <false>>
+<function logError errorIn <body
+    <letsmake objectTosend <object>>
+    <assign objectTosend.data <var errorIn>>
+    <assign objectTosend <call JSON.stringify <var objectTosend>>>
+    <call makeAjaxRequest <add window.location.origin <string "/api/error">> <string "POST"> <var objectTosend>>
+
+
+    <letsmake stack>
+
+    <try <body
+        <throwError <string "">>
+    >
+    <body
+        <assign stack error.stack>
+    >>
+
+    <letsmake split <call stack.split <string "\n">>>
+
+    <call split.splice 1 1>
+
+    <assign stack <call split.join <string "\n">>>
+
+
+    <if <equal error <true>> <body
+        <reply>
+    >>
+    <assign error <true>>
+
+    <render <string "body">
+        <div <empty> <string "Error-Boundrary">
+            <div <empty> <empty>
+
+                <hOne <string "An Error Occured During Run-Time That Could Not Be Dismissed!"> <empty>>
+                <hTwo <var errorIn> <string "gapBelow">>
+
+                <hOne <string "Stack Trace:"> <empty>>
+                <hThree <var stack>>
+            >   
+
+            <style <scss "
+                @import url(`https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap`);
+                .gapBelow{
+                    margin-bottom:60px;
+                }
+
+                .Error-Boundrary {
+                    text-align: center;
+                    & > h2 {
+                        font-family: Source Code Pro, monospace;
+                        font-weight:200;
+                    }
+                    height:100vh;
+                    width:100vw;
+                    position:fixed;
+                    z-index:1000000000;
+                    color:black;
+                    text-align:center;
+                    text-transform: none;
+                    top:0;
+                    justify-content:center;
+                    align-items:center;
+                    background-color: rgba(0,0,0,0.8);
+                    white-space:pre;
+
+                    display:flex;
+                    & > div {
+                        text-align:center;
+                        height:80vh;
+                        background-color:white;
+                        width:80vw;
+                        border-radius:16px;
+                        display:flex;
+                        flex-direction:column;
+                        justify-content:center;
+                    }
+                }
+            ">>
+        >
+    >
+>>

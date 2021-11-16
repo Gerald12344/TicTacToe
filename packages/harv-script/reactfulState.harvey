@@ -1,0 +1,258 @@
+<function createReactiveVariable defaultState <body
+    <reply <stateFulVar defaultState>>
+>>
+
+<function generateStringFromReactVar arrayIn <body
+    <letsmake output <array>>
+
+    <call arrayIn.forEach <Arrowfunc e <body
+        <if <equal <string "object"> <typeof e>> <body
+            <call output.push e.aInternal>
+            <reply>
+        >>
+        <call output.push e>
+    >>>
+
+    <reply <call output.join <string "">>>
+>>
+
+<function booleanComponentRendering boolean component variables <body
+    <letmake cleanup <undefined>>
+    <function updateSettingsCycle <body
+        <if <equal boolean.aInternal <true>> <body
+            <assign cleanup <call <var component> <args variables> >>
+            <reply>  
+        >>
+        <if <equal boolean.aInternal <false>> <body
+            <if <notequal <typeof cleanup> <string "undefined">> <body
+                <call cleanup>
+            >>     
+            <reply>      
+        >>
+        <sendOut <add <string "%c[Harv-Script]"> <string "%c - Failed, incorrect use of usePortal, the first input must be a hook, that is a boolean!">> <string "color:#00B5E2"> <string "color:white">>
+        <call logError <string "Failed, incorrect use of usePortal, the first input must be a hook,  that is a boolean!">>
+    >>
+    <MultiState boolean <Arrowfunc value <body
+        <call updateSettingsCycle>
+    >>>
+    <call updateSettingsCycle>
+>>
+
+<function ReactfulElement ElementType reactVar parent UUID ClassName <body
+    <if <equal UUID <undefined>> <body
+        <assign UUID <uuid>>
+    >>
+
+    <letsmake reactfulVars <array>>
+    <letsmake reactfulClassVars <array>>
+
+    <if <call Array.isArray reactVar> <body
+        <call reactVar.forEach <Arrowfunc e <body
+            <if <equal <string "object"> <typeof e> > <body
+                <call reactfulVars.push e>
+            >>
+        >>>
+    >>
+    <if <call Array.isArray ClassName> <body
+        <call ClassName.forEach <Arrowfunc e <body
+            <if <equal <string "object"> <typeof e> > <body
+                <call reactfulClassVars.push e>
+            >>
+        >>>
+    >>
+
+    <if <equal <string "string"> <typeof reactVar> > <body
+        <if <equal ClassName <undefined>> <body
+            <assign <var ClassName> <var <object>>>
+        >>
+        <if <and <equal ClassName.aListener <undefined>> <notequal <var ClassName> <undefined>>> <body
+            <letsmake defaultState <var ClassName>>
+            <assign <var ClassName> <var <object>>>
+            <assign ClassName.aInternal <var defaultState>>
+        >>
+        <letsmake Element <call element <var ElementType> <var reactVar> <var UUID> <var parent> <var ClassName.aInternal>>>
+        <letsmake returnObj <object>>
+
+        <if <call Array.isArray ClassName> <body
+            <letsmake text <call generateStringFromReactVar ClassName>>
+            <assign Element.className text>
+            <call reactfulClassVars.forEach <Arrowfunc e <body
+                <MultiState e <Arrowfunc value <body
+                    <letsmake text <call generateStringFromReactVar ClassName>>
+                    <assign Element.className text>
+                >>>
+            >>>
+        >>
+        <if <equal <call Array.isArray ClassName> <false>> <body
+            <if <and <equal <string "object"> <typeof ClassName> > <notequal <var ClassName.aListener> <undefined>>> <body
+                <MultiState ClassName <Arrowfunc value <body
+                    <assign Element.className value>
+                >>>
+            >>
+        >>
+        <assign <itterate returnObj <string "UUID">> UUID>
+        <assign <itterate returnObj <string "Element">> Element>
+        <reply <var returnObj>>
+    >>
+
+    <if <equal ClassName <undefined>> <body
+        <assign <var ClassName> <var <object>>>
+    >>
+    <letsmake Element>
+
+    <if <call Array.isArray reactVar> <body
+        <letsmake text <call generateStringFromReactVar reactVar>>
+        <assign Element <call element <var ElementType> <var text> <var UUID> <var parent> <var ClassName.aInternal>>>
+        <call reactfulVars.forEach <Arrowfunc e <body
+            <MultiState e <Arrowfunc value <body
+                <letsmake text <call generateStringFromReactVar reactVar>>
+                <assign Element.innerHTML text>
+            >>>
+        >>>
+    >>
+    <if <equal <call Array.isArray reactVar> <false>> <body
+        <assign Element <call element <var ElementType> <var reactVar.aInternal> <var UUID> <var parent> <var ClassName.aInternal>>>
+        <MultiState reactVar <Arrowfunc value <body
+            <assign Element.innerHTML value>
+        >>>
+    >>
+
+    <if <call Array.isArray ClassName> <body
+        <letsmake text <call generateStringFromReactVar ClassName>>
+        <assign Element.className text>
+        <call reactfulClassVars.forEach <Arrowfunc e <body
+            <MultiState e <Arrowfunc value <body
+                <letsmake text <call generateStringFromReactVar ClassName>>
+                <assign Element.className text>
+            >>>
+        >>>
+    >>
+    <if <equal <call Array.isArray ClassName> <false>> <body
+        <if <and <equal <string "object"> <typeof ClassName> > <notequal <var ClassName.aListener> <undefined>>> <body
+            <MultiState ClassName <Arrowfunc value <body
+                <assign Element.className value>
+            >>>
+        >>
+    >>
+
+    <letsmake returnObj <object>>
+    <assign <itterate returnObj <string "UUID">> UUID>
+    <assign <itterate returnObj <string "Element">> Element>
+    <reply <var returnObj>>
+>>
+
+
+<function reactiveTemplate predefinedVars defaultValueArray valueTemplate typeIn parent <body
+    <"Setup reactive vaiable">
+    <letsmake Var <stateFulVar valueTemplate>>
+
+    <"Save template to variable">
+    <assign Var.acompanyingData valueTemplate>
+
+    <"Add default values">
+
+    <letsmake MetaData <object>>
+
+    <loop "i" predefinedVars.length 1 <body 
+        <assign <itterate MetaData <itterate predefinedVars <var i>>> <itterate defaultValueArray <var i>>>
+        <assign valueTemplate <call valueTemplate.replaceAll <StringConcat <string "%{"> <itterate predefinedVars <var i>> <string "}%">> <itterate defaultValueArray <var i>>>>
+    >>
+
+    <assign Var.update valueTemplate>
+    <assign Var.eventMoreData MetaData>
+
+    <call ReactfulElement typeIn Var parent>
+
+    <reply Var>
+
+>>
+
+
+<function updateTemplate varToUpdate newVal reactfulElement <body
+    <"First get the template">
+    <letsmake Template reactfulElement.acompanyingData>
+    <letsmake ExistingData reactfulElement.eventMoreData>
+
+     <assign <itterate ExistingData <var varToUpdate>> <var newVal>>
+
+     <assign reactfulElement.eventMoreData ExistingData>
+
+
+    <loop "i" <join <call Object.entries ExistingData>.length> 1 <body 
+        <assign Template <call Template.replaceAll <StringConcat <string "%{"> <itterate <itterate <call Object.entries ExistingData> <var i>> 0> <string "}%">> <itterate <itterate <call Object.entries ExistingData> <var i>> 1>>>
+    >>
+
+
+    <assign reactfulElement.update Template>
+>>
+
+<function generateTemplateWithElement predefinedVars defaultValueArray valueTemplate <body
+     <"Setup reactive vaiable">
+    <letsmake Var <stateFulVar valueTemplate>>
+
+    <"Save template to variable">
+    <assign Var.acompanyingData valueTemplate>
+
+    <"Add default values">
+
+    <letsmake MetaData <object>>
+
+    <loop "i" predefinedVars.length 1 <body 
+        <assign <itterate MetaData <itterate predefinedVars <var i>>> <itterate defaultValueArray <var i>>>
+        <assign valueTemplate <call valueTemplate.replaceAll <StringConcat <string "%{"> <itterate predefinedVars <var i>> <string "}%">> <itterate defaultValueArray <var i>>>>
+    >>
+
+    <assign Var.update valueTemplate>
+    <assign Var.eventMoreData MetaData>
+
+
+    <reply Var>
+>>
+
+<function generateModernTemplate template <body
+    <assign template <call template.replace "/\n/g" <string "">>>
+    <letsmake templateIn <call template.match  "/\%{(.*?)\}%/gm">>
+
+    <letsmake variables <array>>
+    <letsmake defaultValues <array>>
+
+    <forArray <var templateIn> <Arrowfunc <var e> <body
+        <assign <var e> <call e.split <string "">>>
+        <call e.splice 0 2>
+        <call e.splice <subtract <var e.length> 2> 2>
+        <assign e <call e.join <string "">>>
+        <letsmake dataInToFunc <call e.split <string "|">>>
+        <call variables.push <itterate dataInToFunc 0>>
+        <call defaultValues.push <itterate dataInToFunc 1>>
+    >>>
+
+    <"Set up the template string">
+    <letsmake firstStage <call template.replace "/\%{(.*?)\}%/gm" <string "%%HARVEY_VARIABLE%%">>>
+    <letsmake almostDone <call firstStage.split <string "%%"> > <call template.replace "/\%{(.*?)\}%/gm"> >
+
+    <letsmake occurence 0>
+    <letsmake justifiedOut <array>>
+
+    <forArray almostDone <Arrowfunc e <body
+        <if <equal <var e> <string "HARVEY_VARIABLE">> <body
+            <call justifiedOut.push <StringConcat <string "%{"> <itterate variables occurence> <string "}%">>>
+            <assign occurence <add <var occurence> 1>>
+            <return>
+        >>
+        <call justifiedOut.push <var e>>
+    >>>
+
+    <letsmake templateDone <call justifiedOut.join <string "">>>
+
+    <letsmake TemplateOut <call generateTemplateWithElement variables defaultValues templateDone>>
+
+    <reply TemplateOut>
+>>
+
+<function ElementMaker typeIn defaultValue parent <body
+    <letsmake Title <call createReactiveVariable <var defaultValue>>>
+    <letsmake UUID <call ReactfulElement <var typeIn> <var Title> <var parent>>>
+
+    <assign Title.UUID <var UUID>>
+    <reply Title>
+>>

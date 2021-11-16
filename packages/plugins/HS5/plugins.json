@@ -1,0 +1,174 @@
+{
+    "plugins": [
+      {
+        "case": "openFile",
+        "file": "HS5/openFile.js"
+      },
+      {
+        "case": "writeFile",
+        "file": "HS5/writeFile.js"
+      },
+      {
+        "case": "While",
+        "file": "HS5/whileLoop.js"
+      },
+      {
+        "case": "comment",
+        "file": "HS5/JSComment.js"
+      },
+      {
+        "case": "join",
+        "file": "HS5/join.js"
+      },
+      {
+        "case": "interval",
+        "file": "HS5/interval.js"
+      },
+      {
+        "case": "listen",
+        "file": "HS5/eventListener.js"
+      },
+      {
+        "case": "TimeOut",
+        "file": "HS5/Timeout.js"
+      },
+      {
+        "case": "Num",
+        "file": "HS5/num.js"
+      },
+      {
+        "case": "Multiply",
+        "file": "HS5/multiply.js"
+      },
+      {
+        "case": "uuid",
+        "file": "HS5/UUID.js"
+      },
+      {
+        "case": "StringConcat",
+        "file": "HS5/PreCompConcat.js"
+      },
+      {
+        "case": "stateFulVar",
+        "file": "HS5/EventDispatcher.js"
+      },
+      {
+        "case": "listenToState",
+        "file": "HS5/registerEventListener.js"
+      },
+      {
+        "case": "MultiState",
+        "file": "HS5/MultiListener.js"
+      },
+      {
+        "case": "empty",
+        "file": "HS5/empty.js"
+      },
+      {
+        "case": "scss",
+        "file": "HS5/scssComp.js"
+      },
+      {
+        "case": "forArray",
+        "file": "HS5/forArray.js"
+      },
+      {
+        "case": "Template",
+        "file": "HS5/Template.js"
+      },
+      {
+        "case": "flatten",
+        "file": "HS5/flatten.js"
+      },
+      {
+        "case": "type",
+        "file": "HS5/typeof.js"
+      },
+      {
+        "case": "try",
+        "file": "HS5/try.js"
+      },
+      {
+        "case": "split",
+        "file": "HS5/destruc.js"
+      },
+      {
+        "case": "args",
+        "file": "HS5/destructructingArray.js"
+      },
+      
+
+
+      {
+        "case": "render",
+        "file": "HS5/HTML_Tags/renderHandler.js"
+      },
+
+      {
+        "case": "hOne",
+        "file": "HS5/HTML_Tags/h1.js"
+      },
+      {
+        "case": "hTwo",
+        "file": "HS5/HTML_Tags/h2.js"
+      },
+      {
+        "case": "hThree",
+        "file": "HS5/HTML_Tags/h3.js"
+      },
+      {
+        "case": "p",
+        "file": "HS5/HTML_Tags/p.js"
+      },
+      {
+        "case": "div",
+        "file": "HS5/HTML_Tags/div.js"
+      },
+      {
+        "case": "style",
+        "file": "HS5/HTML_Tags/style.js"
+      },
+      {
+        "case": "button",
+        "file": "HS5/HTML_Tags/button.js"
+      },
+      {
+        "case": "a",
+        "file": "HS5/HTML_Tags/a.js"
+      },
+      {
+        "case": "ul",
+        "file": "HS5/HTML_Tags/ul.js"
+      },
+      {
+        "case": "ol",
+        "file": "HS5/HTML_Tags/ol.js"
+      },
+      {
+        "case": "li",
+        "file": "HS5/HTML_Tags/li.js"
+      },
+      {
+        "case": "footer",
+        "file": "HS5/HTML_Tags/footer.js"
+      },
+
+      {
+        "case": "useUpdate",
+        "file": "HS5/HTML_Tags/useUpdate.js"
+      },
+      {
+        "case": "useHook",
+        "file": "HS5/HTML_Tags/useHook.js"
+      },
+      {
+        "case": "usePortal",
+        "file": "HS5/HTML_Tags/componentBoolean.js"
+      },
+      {
+        "case": "hookFunction",
+        "file": "HS5/HTML_Tags/hookFunction.js"
+      }
+
+    ]
+}

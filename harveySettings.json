@@ -1,0 +1,29 @@
+{
+  "debug": true,
+  "version": "v1",
+  "evalOnCompile": false,
+
+  "outputFolder": "dist",
+  "outputFileName": "index.js",
+  "inputFolder": "src",
+  "inputFile": "index.harvey",
+  "debugFile": true,
+  "debugFileName": "debug.js",
+  "debugFileLocation": "debug",
+  "obuscateOutput": true,
+
+  "pluginsFolder": "packages/plugins",
+  "pluginsSettings": "plugins.json",
+  "packagesFolder": "packages",
+
+  "dev": true,
+  "watchmode": true,
+
+  "browserify": true,
+
+  "dependencies": {
+    "Basic-Control": "^1.0",
+    "harv-script-5": "^1.0",
+    "HarveyScript-Framework": "^1.0"
+  }
+}

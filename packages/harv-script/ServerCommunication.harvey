@@ -1,0 +1,21 @@
+<function makeAjaxRequest url typeIn body returnFunc <body
+    <letsmake ajax <new <call XMLHttpRequest>>>
+
+    <if <equal ajax <undefined>> <body
+        <sendOut <string "that a negetive Chief">>
+        <reply <false>>
+    >>
+
+    <function RecieveData <body
+        <returnFunc >
+    >>
+
+    <assign ajax.onreadystatechange <var RecieveData>>
+
+
+
+    <call ajax.open <var typeIn> <var url> <true>>
+
+    <call ajax.setRequestHeader <string "Content-type"> <string "application/json">>
+    <call ajax.send body> 
+>>

@@ -1,0 +1,8 @@
+module.exports = {
+    Command: function(input){
+      return(`uuidv4()`) // What to return when called
+    },
+    Dependencies: function(){
+      return(`var byteToHex = []; for (var iii = 0; iii < 256; ++iii) { byteToHex[iii] = (iii + 0x100).toString(16).substr(1); } function bytesToUuid(buf, offset) { var iii = offset || 0; var bth = byteToHex; return ([ bth[buf[iii++]], bth[buf[iii++]], bth[buf[iii++]], bth[buf[iii++]], '-', bth[buf[iii++]], bth[buf[iii++]], '-', bth[buf[iii++]], bth[buf[iii++]], '-', bth[buf[iii++]], bth[buf[iii++]], '-', bth[buf[iii++]], bth[buf[iii++]], bth[buf[iii++]], bth[buf[iii++]], bth[buf[iii++]], bth[buf[iii++]] ]).join(''); } var getRandomValues = (typeof (crypto) != 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) || (typeof (msCrypto) != 'undefined' && typeof window.msCrypto.getRandomValues == 'function' && msCrypto.getRandomValues.bind(msCrypto)); function uuidv4(options, buf, offset) { var rnds = new Array(16); var iii = buf && offset || 0; if (typeof (options) == 'string') { buf = options === 'binary' ? new Array(16) : null; options = null; } options = options || {}; let mathRNG = ()  => { for (var iii = 0, r; iii < 16; iii++) { if ((iii & 0x03) === 0) r = Math.random() * 0x100000000; rnds[iii] = r >>> ((iii & 0x03) << 3) & 0xff; } return rnds; }; var rnds = options.random || (options.rng || mathRNG)(); rnds[6] = (rnds[6] & 0x0f) | 0x40; rnds[8] = (rnds[8] & 0x3f) | 0x80; if (buf) { for (var ii = 0; ii < 16; ++ii) { buf[iii + ii] = rnds[ii]; } } return buf || bytesToUuid(rnds); } `) // No Dependencies
+    }
+  }

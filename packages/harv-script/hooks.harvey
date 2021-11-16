@@ -1,0 +1,41 @@
+<comment "I will now add mega cool hooks for server communication">
+
+<function useUpdate inputFunc arrayToWatch <body 
+
+    <letsmake killFunc <call inputFunc>>
+
+
+    <call arrayToWatch.forEach <Arrowfunc e <body
+        <comment "Now verify that e actually is a reactful variable">
+
+        <if <and <equal <type e> <string "object">> <notequal <var e> <null>>> <body 
+            <comment "Now check if has the right properties">
+
+            <if <notequal <var e.addListener> <undefined>> <body
+                <call e.addListener <Arrowfunc <body
+                        <call inputFunc>
+                    >>
+                >
+                <return>
+            >>
+        >>
+        <sendOut <add <string "%c[Harv-Script]"> <string "%c - Failed, incorrect use of hooks, useUpdate must use a array of useHook variables!">> <string "color:#00B5E2"> <string "color:white">>
+        <call logError <string "Failed, incorrect use of hooks, useUpdate must use a array of useHook variables!">>
+    >>>
+
+    <reply killFunc>
+>>
+
+<function useHook defaultVal <body
+    <comment "lets make a reactive variable">
+    <letsmake mainReactfulVar <stateFulVar defaultVal>>
+
+    <function update val <body
+        <assign mainReactfulVar.update val>
+    >>
+
+    <letsmake output <array mainReactfulVar update>>
+
+    <reply output>
+>>
+

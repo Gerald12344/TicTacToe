@@ -1,0 +1,60 @@
+<letsmake OpenFuns <array>>
+
+<function WindowMonitor ReturnFunc <body
+  <assign history.move <Arrowfunc body <body
+    <loop "i" OpenFuns.length 1 <body 
+      <letsmake item <itterate OpenFuns <var i>>>
+      <if <notequal item <undefined>> <body
+        <call item>
+      >>
+    >>
+    <letsmake Root document.body>
+    <assign Root.innerHTML <string "">>
+
+    <call history.pushState <string ""> <string ""> <var body>>
+
+    <"just console it if for now">
+    <sendOut <add <string "%c[Harv-Script]"> <string "%c - Page location changed to "> <var window.location.pathname> <string "!">> <string "color:#00B5E2"> <string "color:white">>
+  
+    <call ReturnFunc>
+  >>>
+
+  <assign window.onpopstate <Arrowfunc <body
+  <sendOut <var window.location.pathname>>
+    <loop "i" OpenFuns.length 1 <body 
+      <letsmake item <itterate OpenFuns <var i>>>
+      <if <notequal item <undefined>> <body
+        <call item>
+      >>
+    >>
+    <letsmake Root document.body>
+    <assign Root.innerHTML <string "">>
+    <call history.pushState <string ""> <string ""> <var window.location.pathname>>
+    
+    <call ReturnFunc>
+  >>>
+
+>>
+
+<function RouterPoint location exact component <body
+  <if exact <body
+    <if <equal window.location.pathname <var location>> <body
+      <call OpenFuns.push <call component>>
+    >> 
+  >>
+  <if <equal exact false> <body
+    <if <call window.location.pathname.startsWith <var location>> <body
+      <call OpenFuns.push <call component>>
+    >> 
+  >>
+>> 
+
+<function Link href text id parent className <body
+  <call element <string "button"> <var text> <var id> <var parent> <var className> >
+
+  <call MontiorInputs <var id> <string "click"> <Arrowfunc value    <body
+    <if <notequal href window.location.pathname> <body
+      <call history.move href>
+    >>
+  >>>
+>>

@@ -1,0 +1,20 @@
+<"Harv FrameWork Scripts">
+
+<comment "This is the main script files for .Harvey, (c) - Harvey Randall 2021">
+<comment "Because of the small size of this project the dev files are kept at the top of the build file">
+<sendOut <add <string "%c[Harv-Script]"> <string "%c - Running Harv-Script Developmet v1.0.1!">> <string "color:#00B5E2"> <string "color:white">>
+<letsmake componentHashTree <object>>
+<pluginFetch "harv-script/StartHarvScript.harvey">
+<pluginFetch "harv-script/ServerCommunication.harvey">
+<pluginFetch "harv-script/handleInput.harvey">
+<pluginFetch "harv-script/elements.harvey">
+<pluginFetch "harv-script/harv-router.harvey">
+<pluginFetch "harv-script/reactfulState.harvey">
+
+<comment "hooks">
+<pluginFetch "harv-script/hooks.harvey">
+
+<comment "debugging">
+<pluginFetch "harv-script/Debugger.harvey">
+
+<comment "Harvey Framework scripts end here">

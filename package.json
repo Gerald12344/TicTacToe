@@ -1,0 +1,38 @@
+{
+  "name": "rovolution_spotify_app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./compiler/index.js --trace-warnings --max-old-space-size=4096"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gerald12344/.HarveyLanguage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gerald12344/.HarveyLanguage/issues"
+  },
+  "homepage": "https://github.com/Gerald12344/.HarveyLanguage#readme",
+  "dependencies": {
+    "@assemblyscript/loader": "^0.17.7",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "browserify": "^17.0.0",
+    "chokidar": "^3.5.1",
+    "domelementtype": "^2.2.0",
+    "express": "^4.17.1",
+    "generator-code": "^1.5.2",
+    "javascript-obfuscator": "^2.9.4",
+    "optimize-js": "^1.0.3",
+    "prepack": "^0.2.24",
+    "sass": "^1.35.1",
+    "uuid": "^8.3.2",
+    "winston-color": "^1.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
+}

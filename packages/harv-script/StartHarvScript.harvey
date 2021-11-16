@@ -1,0 +1,10 @@
+<comment "'Not all web pages were made the same, it is our job to fix that' - Harvey Randall 2020">
+
+<comment <TimeOut 500 <Arrowfunc <body
+<letsmake bodyMain <itterate <call document.getElementsByTagName <string "BODY">>0>>
+<letsmake headMain <itterate <call document.getElementsByTagName <string "HEAD">>1>>
+
+<assign bodyMain.id <string "body">>
+<assign headMain.id <string "head">>
+
+>>>>

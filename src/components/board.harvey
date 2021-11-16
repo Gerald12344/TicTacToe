@@ -1,0 +1,79 @@
+<function board parentIn props <body
+
+    <render <var parentIn> <body
+        <div <empty> <string "board">
+            <div <empty> <empty> 
+                <letsmake item <itterate props 0>>
+                <button <var item> <empty> <body
+                    <assign item.update <string "O">>
+                >>
+
+                <letsmake itemTwo <itterate props 1>>
+                <button <var itemTwo> <empty> <body
+                    <assign itemTwo.update <string "O">>
+                >>
+
+                <letsmake itemThree <itterate props 2>>
+                <button <var itemThree> <empty> <body
+                    <assign itemThree.update <string "O">>
+                >>
+            >
+            <div <empty> <empty> 
+                <letsmake item <itterate props 3>>
+                <button <var item> <empty> <body
+                    <assign item.update <string "O">>
+                >>
+
+                <letsmake itemTwo <itterate props 4>>
+                <button <var itemTwo> <empty> <body
+                    <assign itemTwo.update <string "O">>
+                >>
+
+                <letsmake itemThree <itterate props 5>>
+                <button <var itemThree> <empty> <body
+                    <assign itemThree.update <string "O">>
+                >>
+            >
+            <div <empty> <empty> 
+                <letsmake item <itterate props 6>>
+                <button <var item> <empty> <body
+                    <assign item.update <string "O">>
+                >>
+
+                <letsmake itemTwo <itterate props 7>>
+                <button <var itemTwo> <empty> <body
+                    <assign itemTwo.update <string "O">>
+                >>
+
+                <letsmake itemThree <itterate props 8>>
+                <button <var itemThree> <empty> <body
+                    <assign itemThree.update <string "O">>
+                >>
+            >
+        >
+
+        <style <scss "
+            .board { 
+                display: flex;
+                flex-direction:column;
+
+                & > div {
+                    flex-direction: horizontal;
+                    width: 300px;
+                    display:flex;
+                    height:100px;
+
+                    & > button {
+                        width: 100px;
+                        height:100px;
+                        border: 1px solid white;
+                        text-align: center;
+                        justify-content: center;
+                        line-height: 100px;
+                        font-size: 50px;
+                    }
+                }
+            }
+        ">>
+    >>
+>>

@@ -1,0 +1,68 @@
+<function element type text id parent className <body
+
+  <if <equal <typeof className <var className>> <string "object">> <body
+    <assign className <string "">>
+  >>
+
+
+  <letsmake newElement <call document.createElement type>>
+
+  <letsmake parentIn <itterate componentHashTree parent>>
+  <assign newElement.innerHTML <var text>>
+
+  <if <notequal parentIn <undefined>> <body
+    <call parentIn.appendChild <var newElement>>
+  >>
+
+
+  <if <equal parentIn <undefined>> <body
+    <if <equal <call document.getElementById <var id>> null> <body 
+      <letsmake FoundParent <call document.getElementById parent>>
+      <if <equal <var parent> <string "body">> <body
+        <assign FoundParent <itterate <call document.getElementsByTagName parent> 0>>
+      >>
+      <if <equal <var parent> <string "head">> <body
+        <assign FoundParent <itterate <call document.getElementsByTagName parent> 0>>
+      >>
+      <call FoundParent.appendChild <var newElement>>
+    >>
+    <if <notequal <call document.getElementById <var id>> null> <body 
+      <assign newElement.innerHTML text>
+    >>
+  >>
+
+  <if <and <notequal className <undefined>> <notequal className <string "">> > <body
+    <assign newElement.className className>
+  >>
+
+  <assign <itterate componentHashTree id> <var newElement>>
+  <reply <var newElement>>
+
+>>
+
+<function updatelement id inner <body
+  <letsmake FoundParent <call document.getElementById id>>
+  <assign FoundParent.innerHTML inner>
+
+>>
+
+<function updateText id text wipeValue <body
+  <letsmake Node <call document.getElementById id>>
+  <assign Node.innerHTML text>
+  <if wipeValue <body
+    <assign Node.value text>
+  >>
+>>
+
+<function removeComponents ArrayIn UseEffects <body 
+  <forArray ArrayIn <Arrowfunc e <body
+    <call e.Element.remove>
+  >>>
+
+  <if <notequal UseEffects <undefined>> <body
+    <forArray UseEffects <Arrowfunc e <body
+      <call e>
+    >>>
+  >>
+  
+>>

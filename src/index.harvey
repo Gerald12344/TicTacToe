@@ -1,0 +1,32 @@
+<"Ok first website written entirely in .harvey">
+<string "use strict">
+
+<"First thing first make sure we need to get all of the Harvey Framework functions">
+<package "harv-script">
+<call Debugger <true>>
+
+<"Next load all bundles!">
+
+<"Fetch components">
+<iWant "src/components/globalCSS.harvey">
+<iWant "src/components/tixTaxToe.harvey">
+
+
+<" We start with just the homepage">
+<function RouterRoot <body
+  <"First import global CSS">
+  <call GlobalCSS <string "body">>
+  <call tixTaxToe>
+>>
+
+
+
+
+<"First wait for all content to load, especially bundle">
+<call window.addEventListener <string "load"> <Arrowfunc <body
+  <"Start Harvscript Router and clear webpage">
+  <call RouterRoot>
+
+  <"Now monitor the window for any url changes">
+  <call WindowMonitor <var RouterRoot>>
+>>>
