@@ -1,0 +1,11 @@
+<function WarningComponent Mainparent <body
+    <sendOut Mainparent>
+    <render <var Mainparent>
+        <hThree <string "A player has already selected this square!"> <string "Warning">>
+        <style <string "
+            .Warning {
+                color: #ff0000;
+            }
+        "> <empty>>
+    >
+>>

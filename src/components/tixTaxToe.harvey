@@ -11,10 +11,53 @@
     <letsmake <split Eight useEight> <useHook <string "">>>
     <letsmake <split Nine useNine> <useHook <string "">>>
 
+    <comment "which player??">
+    <letsmake <split player usePlayer> <useHook <string "X">>>
+    <letsmake <split playertitle usePlayertitle> <useHook <string "Player 1">>>
+
+    <letsmake <split warning useWarning> <useHook <false>>>
+
     <letsmake arrayTosend <array One Two Three Four Five Six Seven Eight Nine>>
+
+    <function validateMove num <body
+        <letsmake itemGetting <itterate arrayTosend num>>
+
+        <if <notequal itemGetting.aInternal <string "">> <body
+            <call useWarning <true>>
+            <TimeOut 2000 <Arrowfunc <body
+                <call useWarning <false>>
+            >>>
+            
+            <reply <false>>
+        >>
+    >>
+
 
     <render <string "body">
         <hOne <string "Welcome To Tix Tax Toe!">>
-        <call board parent arrayTosend>
+        <hTwo <array <string "Current Player: "> <var playertitle>>>
+
+        <usePortal warning WarningComponent <array parent>>
+
+
+        <call board parent arrayTosend player <function FlickPlayer num <body
+
+            <if <equal <call validateMove num> <false>> <body
+                <reply <false>>
+            >>
+
+            <sendOut <equal player.aInternal <string "O">>>
+            <if <equal player.aInternal <string "O">> <body
+                <call usePlayer <string "X">>
+                <call usePlayertitle <string "Player 2">>
+                <reply <true>>
+            >>
+
+            <if <equal player.aInternal <string "X">> <body
+                <call usePlayer <string "O">>
+                <call usePlayertitle <string "Player 1">>
+                <reply <true>>
+            >>
+        >>> 
     >
 >>

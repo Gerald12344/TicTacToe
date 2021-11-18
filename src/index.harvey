@@ -10,6 +10,7 @@
 <"Fetch components">
 <iWant "src/components/globalCSS.harvey">
 <iWant "src/components/tixTaxToe.harvey">
+<iWant "src/components/warningComponent.harvey">
 
 
 <" We start with just the homepage">

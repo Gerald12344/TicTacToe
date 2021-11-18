@@ -1,53 +1,80 @@
-<function board parentIn props <body
+<function board parentIn props player callback <body
 
     <render <var parentIn> <body
         <div <empty> <string "board">
             <div <empty> <empty> 
                 <letsmake item <itterate props 0>>
                 <button <var item> <empty> <body
-                    <assign item.update <string "O">>
+                    <if <equal <call callback 0> <false>> <body
+                        <reply>
+                    >>
+                    <assign item.update <var player.aInternal>>
                 >>
-
+                
                 <letsmake itemTwo <itterate props 1>>
                 <button <var itemTwo> <empty> <body
-                    <assign itemTwo.update <string "O">>
+                    <if <equal <call callback 1> <false>> <body
+                        <reply>
+                    >>
+                    <assign itemTwo.update <var player.aInternal>>
                 >>
 
                 <letsmake itemThree <itterate props 2>>
                 <button <var itemThree> <empty> <body
-                    <assign itemThree.update <string "O">>
+                    <if <equal <call callback 2> <false>> <body
+                        <reply>
+                    >>
+                    <assign itemThree.update <var player.aInternal>>
                 >>
             >
             <div <empty> <empty> 
                 <letsmake item <itterate props 3>>
                 <button <var item> <empty> <body
-                    <assign item.update <string "O">>
+                    <if <equal <call callback 3> <false>> <body
+                        <reply>
+                    >>
+                    <assign item.update <var player.aInternal>>
                 >>
 
                 <letsmake itemTwo <itterate props 4>>
                 <button <var itemTwo> <empty> <body
-                    <assign itemTwo.update <string "O">>
+                    <if <equal <call callback 4> <false>> <body
+                        <reply>
+                    >>
+                    <assign itemTwo.update <var player.aInternal>>
                 >>
 
                 <letsmake itemThree <itterate props 5>>
                 <button <var itemThree> <empty> <body
-                    <assign itemThree.update <string "O">>
+                    <if <equal <call callback 5> <false>> <body
+                        <reply>
+                    >>
+                    <assign itemThree.update <var player.aInternal>>
                 >>
             >
             <div <empty> <empty> 
                 <letsmake item <itterate props 6>>
                 <button <var item> <empty> <body
-                    <assign item.update <string "O">>
+                    <if <equal <call callback 6> <false>> <body
+                        <reply>
+                    >>
+                    <assign item.update <var player.aInternal>>
                 >>
 
                 <letsmake itemTwo <itterate props 7>>
                 <button <var itemTwo> <empty> <body
-                    <assign itemTwo.update <string "O">>
+                    <if <equal <call callback 7> <false>> <body
+                        <reply>
+                    >>
+                    <assign itemTwo.update <var player.aInternal>>
                 >>
 
                 <letsmake itemThree <itterate props 8>>
                 <button <var itemThree> <empty> <body
-                    <assign itemThree.update <string "O">>
+                    <if <equal <call callback 8> <false>> <body
+                        <reply>
+                    >>
+                    <assign itemThree.update <var player.aInternal>>
                 >>
             >
         >
