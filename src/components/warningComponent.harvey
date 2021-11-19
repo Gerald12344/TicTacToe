@@ -1,11 +1,31 @@
 <function WarningComponent Mainparent <body
-    <sendOut Mainparent>
+
     <render <var Mainparent>
         <hThree <string "A player has already selected this square!"> <string "Warning">>
         <style <string "
             .Warning {
                 color: #ff0000;
             }
+        "> <empty>>
+    >
+>>
+
+<function WinningComponent Mainparent Who ArrayOfState gameOver playerThing playerstuff <body
+    <render <var Mainparent>
+        <hOne <string "GAME OVER!!!!"> <string "Winning">>
+        <hTwo Who>
+        <button <string "Refresh The Game!"> <empty> <body
+        
+            <loop "i" 9 1 <innerLoop 
+                <letsmake item <itterate ArrayOfState i>>
+                <assign item.update <string "">>
+            >>
+            <call playerThing <string "X">>
+            <call playerstuff <string "Player 1">>
+            <call gameOver <false>>
+        >>
+        <style <string "
+            
         "> <empty>>
     >
 >>

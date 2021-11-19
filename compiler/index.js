@@ -373,7 +373,7 @@ function codeGenerator(node) {
         case 'reply':
           return (`return(${node.arguments.map(codeGenerator)[0]})`)
         case 'innerLoop':
-          return (`{${node.arguments.map(codeGenerator)[0]}}`)
+          return (`{${node.arguments.map(codeGenerator).join(";")}}`)
         case 'body':
           return (`${node.arguments.map(codeGenerator).join(';')}`)
         case 'typeof':

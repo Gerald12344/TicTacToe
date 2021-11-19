@@ -18,12 +18,22 @@
 
 <function booleanComponentRendering boolean component variables <body
     <letmake cleanup <undefined>>
+    <letsmake rendered <false>>
     <function updateSettingsCycle <body
         <if <equal boolean.aInternal <true>> <body
+            <if <equal <var rendered> <true>> <body
+                <reply>
+            >>
+            <assign rendered <true>>
             <assign cleanup <call <var component> <args variables> >>
+            
             <reply>  
         >>
         <if <equal boolean.aInternal <false>> <body
+            <if <equal <var rendered> <false>> <body
+                <reply>
+            >>
+            <assign rendered <false>>
             <if <notequal <typeof cleanup> <string "undefined">> <body
                 <call cleanup>
             >>     

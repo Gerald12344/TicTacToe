@@ -1,0 +1,115 @@
+<function checkWinner boardArray <body
+
+
+    <comment "check if colomn has winner">
+    <loop "k" 3 1 <innerLoop
+
+        <letsmake numXCol 0>
+        <letsmake numOCol 0>
+
+        <loop "i" 9 3 <innerLoop
+            <letsmake item <itterate boardArray <add i k>>>
+            <if <equal item.aInternal <string "O">> <body
+                <assign numOCol <add numOCol 1>>
+            >>
+            <if <equal item.aInternal <string "X">> <body
+                <assign numXCol <add numXCol 1>>
+            >>
+        >>
+        <if <equal numXCol 3> <body
+            <reply <array <true> <string "X has won the game!">>>
+            <comment "X WINS!">
+        >>
+        <if <equal numOCol 3> <body
+            <reply <array <true> <string "O has won the game!">>>
+            <comment "O WINS!">
+        >>
+
+    >>
+    
+
+    <comment "check if row has winner">
+    <loop "k" 9 3 <innerLoop
+
+        <letsmake numXRow 0>
+        <letsmake numORow 0>
+        <loop "i" 3 1 <innerLoop
+            <letsmake item <itterate boardArray <add i k>>>
+            <if <equal item.aInternal <string "O">> <body
+                <assign numORow <add numORow 1>>
+            >>
+            <if <equal item.aInternal <string "X">> <body
+                <assign numXRow <add numXRow 1>>
+            >>
+        >>
+
+        <if <equal numXRow 3> <body
+            <reply <array <true> <string "X has won the game!">>>
+            <comment "X WINS!">
+        >>
+        <if <equal numORow 3> <body
+            <reply <array <true> <string "O has won the game!">>>
+            <comment "O WINS!">
+        >>
+    >>
+
+    <comment "now check diagonals!">
+
+    <letsmake numXDiag 0>
+    <letsmake numODiag 0>
+
+    <loop "i" 9 4 <innerLoop 
+        <letsmake item <itterate boardArray i>>
+        <if <equal item.aInternal <string "O">> <body
+            <assign numODiag <add numODiag 1>>
+        >>
+        <if <equal item.aInternal <string "X">> <body
+            <assign numXDiag <add numXDiag 1>>
+        >>
+    >>
+    <if <equal numXDiag 3> <body
+        <reply <array <true> <string "X has won the game!">>>
+        <comment "X WINS!">
+    >>
+    <if <equal numODiag 3> <body
+        <reply <array <true> <string "O has won the game!">>>
+        <comment "O WINS!">
+    >>
+
+    <letsmake numXDiagInv 0>
+    <letsmake numODiagInv 0>
+
+    <loop "i" 5 2 <innerLoop 
+        <letsmake k <add i 2>>
+        <letsmake item <itterate boardArray k>>
+        <if <equal item.aInternal <string "O">> <body
+            <assign numODiagInv <add numODiagInv 1>>
+        >>
+        <if <equal item.aInternal <string "X">> <body
+            <assign numXDiagInv <add numXDiagInv 1>>
+        >>
+    >>
+    <if <equal numXDiagInv 3> <body
+        <reply <array <true> <string "X has won the game!">>>
+        <comment "X WINS!">
+    >>
+    <if <equal numODiagInv 3> <body
+        <reply <array <true> <string "O has won the game!">>>
+        <comment "O WINS!">
+    >>
+
+    <letsmake total 0>
+    <loop "i" 9 1 <innerLoop 
+        <letsmake item <itterate boardArray i>>
+        <if <notequal item.aInternal <string "">> <body
+            <assign total <add total 1>>
+        >>
+    >>
+    <if <equal total 9> <body
+        <reply <array <true> <string "Draw no one has won the game">>>
+        <comment "No one wins!">
+    >>
+
+    <reply <array <false>>>
+
+>>
