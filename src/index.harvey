@@ -10,14 +10,17 @@
 <"Fetch components">
 <iWant "src/components/globalCSS.harvey">
 <iWant "src/components/tixTaxToe.harvey">
-<iWant "src/components/warningComponent.harvey">
+<iWant "src/pages/homepage.harvey">
+
 
 
 <" We start with just the homepage">
 <function RouterRoot <body
   <"First import global CSS">
   <call GlobalCSS <string "body">>
-  <call tixTaxToe>
+
+  <call RouterPoint <string "/"> <true> <var homepage>>
+  <call RouterPoint <string "/tictactoe"> <true> <var tixTaxToe>>
 >>
 
 

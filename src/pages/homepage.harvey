@@ -1,0 +1,17 @@
+<function homepage <body
+
+    <render <string "body">
+        <hOne <string "Welcome to .harvey playground!"> <string "Warning">>
+
+        <hTwo <string "Where I will put all the projects I have been working on">>
+
+        <hThree <string "Here is a list of all pages so far!">>
+        <a <string "Tic Tac Toe!"> <empty> <string "tictactoe">>
+        <style <string "
+            .Warning {
+                color: #00a8ff;
+            }
+
+        "> <empty>>
+    >
+>>

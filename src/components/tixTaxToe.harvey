@@ -1,5 +1,6 @@
 <iWant "src/components/board.harvey">
 <iWant "src/utils/checkWinner.harvey">
+<iWant "src/components/warningComponent.harvey">
 
 <hookFunction tixTaxToe <body
     <letsmake <split One useOne> <useHook <string "">>>
@@ -52,6 +53,7 @@
 
 
     <render <string "body">
+        <a <string "Home"> <empty> <string "/">>
         <hOne <string "Welcome To Tix Tax Toe!">>
         <hTwo <array <string "Current Player: "> <var playertitle>>>
 

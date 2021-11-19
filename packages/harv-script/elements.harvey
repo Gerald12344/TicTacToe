@@ -56,12 +56,15 @@
 
 <function removeComponents ArrayIn UseEffects <body 
   <forArray ArrayIn <Arrowfunc e <body
+
     <call e.Element.remove>
   >>>
 
   <if <notequal UseEffects <undefined>> <body
     <forArray UseEffects <Arrowfunc e <body
-      <call e>
+      <if <equal <typeof e> <string "function">> <body
+        <call e>
+      >>
     >>>
   >>
   
