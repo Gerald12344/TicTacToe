@@ -1,17 +1,28 @@
 <function homepage <body
 
     <render <string "body">
-        <hOne <string "Welcome to .harvey playground!"> <string "Warning">>
+        <hOne <string "Welcome to .harvey playground!"> <string "Welcome">>
 
         <hTwo <string "Where I will put all the projects I have been working on">>
 
         <hThree <string "Here is a list of all pages so far!">>
-        <a <string "Tic Tac Toe!"> <empty> <string "tictactoe">>
-        <style <string "
-            .Warning {
+        <ul <empty> <string "list">
+            <li <empty> <empty> <a <string "Tic Tac Toe!"> <empty> <string "tictactoe">>>
+            <li <empty> <empty> <a <string "Clock!"> <empty> <string "clock">>>
+        >
+        
+        <style <scss "
+            .Welcome {
                 color: #00a8ff;
             }
-
+            .list {
+                button {
+                    font-size:20px;
+                    background-color: darken(#2f3640, 10%);
+                    bordere: 1px solid;
+                    color: #00a8ff;
+                }
+            }
         "> <empty>>
     >
 >>

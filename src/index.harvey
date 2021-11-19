@@ -11,6 +11,7 @@
 <iWant "src/components/globalCSS.harvey">
 <iWant "src/components/tixTaxToe.harvey">
 <iWant "src/pages/homepage.harvey">
+<iWant "src/pages/clock.harvey">
 
 
 
@@ -21,6 +22,7 @@
 
   <call RouterPoint <string "/"> <true> <var homepage>>
   <call RouterPoint <string "/tictactoe"> <true> <var tixTaxToe>>
+  <call RouterPoint <string "/clock"> <true> <var Clock>>
 >>
 
 

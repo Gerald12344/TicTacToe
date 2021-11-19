@@ -1,0 +1,11 @@
+<function Clock <body
+
+    <render <string "body">
+        <hThree <string "A player has already selected this square!"> <string "Warning">>
+        <style <string "
+            .Warning {
+                color: #ff0000;
+            }
+        "> <empty>>
+    >
+>>
