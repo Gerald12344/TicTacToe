@@ -25,10 +25,13 @@
 
     <reply killFunc>
 >>
+<letsmake hooks <array>>
 
 <function useHook defaultVal <body
     <comment "lets make a reactive variable">
     <letsmake mainReactfulVar <stateFulVar defaultVal>>
+
+    <call hooks.push mainReactfulVar>
 
     <function update val <body
         <assign mainReactfulVar.update val>

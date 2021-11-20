@@ -18,8 +18,10 @@
             .list {
                 button {
                     font-size:20px;
-                    background-color: darken(#2f3640, 10%);
-                    bordere: 1px solid;
+                    background-color: #2f3640;
+                    cursor:pointer;
+                    text-decoration: underline;
+                    border: 0px solid;
                     color: #00a8ff;
                 }
             }
