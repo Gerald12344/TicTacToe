@@ -145,6 +145,10 @@
         >>
     >>
 
+    <if <equal <string "string"> <typeof ClassName>>  <body
+        <assign Element.className ClassName>
+    >>
+
     <letsmake returnObj <object>>
     <assign <itterate returnObj <string "UUID">> UUID>
     <assign <itterate returnObj <string "Element">> Element>

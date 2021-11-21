@@ -405,6 +405,8 @@ function codeGenerator(node) {
           return (`${node.arguments.map(codeGenerator)[0]} = ${node.arguments.map(codeGenerator)[1]}`)
         case 'string':
           return (`'${node.arguments.map(codeGenerator).map(e => { return `${e}`.replace("/\n/g", "").replace(/\s\s+/g, ' ') })}'`)
+        case 'toString':
+          return ("`${"+ node.arguments.map(codeGenerator).join("") + "}`")
         case 'array':
           return (`[${node.arguments.map(codeGenerator).join(',')}]`)
         case 'itterate':
