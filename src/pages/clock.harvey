@@ -29,13 +29,13 @@
         <letsmake secSplit <call secString.split <string "">>>
 
         <if <equal secSplit.length 1> <body
-            <assign sec <add <string "0"> <var min>>>
+            <assign sec <add <string "0"> <var sec>>>
         >>
-
+        
         <letsmake outputArray <array <var hour> <string ":"> <var min> <string ":"> <var sec>>>
 
         <reply <call outputArray.join <string "">>>
-        
+
     >>
 
 
