@@ -4,8 +4,8 @@ module.exports = {
     let Parent = input[0]
     let className = input[1]
     let clickCallback = input[2]
-    input.splice(0, 2)
-    input.splice(input.length - 1, 1)
+    input.splice(0, 3)
+    //input.splice(input.length - 1, 1)
     let Children = input.join(";")
     let secondPart = ""
     if (Children !== "") {

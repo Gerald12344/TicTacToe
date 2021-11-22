@@ -9,6 +9,7 @@
         <ul <empty> <string "list">
             <li <empty> <empty> <a <string "Tic Tac Toe!"> <empty> <string "tictactoe">>>
             <li <empty> <empty> <a <string "Clock!"> <empty> <string "clock">>>
+            <li <empty> <empty> <a <string "Calculator!"> <empty> <string "calculator">>>
         >
         
         <style <scss "

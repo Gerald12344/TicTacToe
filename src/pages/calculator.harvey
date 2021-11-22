@@ -1,0 +1,130 @@
+<iWant "src/components/calculatorButton.harvey">
+
+<hookFunction Calculator <body
+    <letsmake <split screenOutput useOutput> <useHook <string "">>>
+
+    <letsmake currentVal 0>
+    <letsmake showingAnswer <false>>
+
+    <function handleClick type <body 
+        <if <equal showingAnswer <true>> <body
+            <call useOutput <string "">>
+        >>
+        <assign showingAnswer <false>>
+        <call useOutput <add screenOutput.aInternal type>>
+    >>
+
+
+
+    <function handleEnter <body
+        <assign showingAnswer <true>>
+        <letsmake formattedString screenOutput.aInternal>
+        <assign formattedString <call formattedString.replace <string "x"> <string "*">>>
+        <assign formattedString <call formattedString.replace <string "÷"> <string "/">>>
+
+        <call useOutput <add <string "="> <call eval formattedString>>>
+    >>
+
+    <render <string "body">
+        <a <string "Home"> <empty> <string "/">>
+        <hOne <string ".Harvey calculator, using components for buttons!">>
+        <div <empty> <string "calcBody"> 
+            <hOne screenOutput <string "output">>
+            <div <empty> <string "buttons-area">
+                <call calculatorButton InternalUUID <string "1"> handleClick>
+                <call calculatorButton InternalUUID <string "2"> handleClick>
+                <call calculatorButton InternalUUID <string "3"> handleClick>
+                <call calculatorButton InternalUUID <string "+"> handleClick>
+                <call calculatorButton InternalUUID <string "4"> handleClick>
+                <call calculatorButton InternalUUID <string "5"> handleClick>
+                <call calculatorButton InternalUUID <string "6"> handleClick>
+                <call calculatorButton InternalUUID <string "-"> handleClick>
+                <call calculatorButton InternalUUID <string "7"> handleClick>
+                <call calculatorButton InternalUUID <string "8"> handleClick>
+                <call calculatorButton InternalUUID <string "9"> handleClick>
+                <call calculatorButton InternalUUID <string "x"> handleClick>
+
+                <call calculatorButton InternalUUID <string "÷"> handleClick>
+                <call calculatorButton InternalUUID <string "0"> handleClick>
+                <call calculatorButton InternalUUID <string "."> handleClick>
+                <call calculatorButton InternalUUID <string "="> handleEnter>
+            >
+        >
+
+        <style <scss "
+            .calcBody{
+                background-color:darken(#2f3640, 5%);
+                border-radius:15px;
+                width:400px;
+                height:600px;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                margin-top:20px;
+                flex-direction:column;
+
+                .output{
+                    height:100px;
+                    background-color:white;
+                    color:black;
+                    line-height:100px;
+                    padding: 0px 15px 0px 15px;
+                    border-radius:15px;
+                    width:80%;
+                    text-align:right;
+                }
+
+                .buttons-area{
+                    height:380px;
+                    width:80%;
+                    padding: 0px 10px 0px 10px;
+                    border-radius:15px;
+                    background-color: darken(#2f3640, 10%);
+                    display:flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-content: center;
+                    flex-wrap: wrap;
+                    & > div {
+                        text-align:center;
+                        width: 23%;
+                        height:20%;
+
+                        background-color: darken(#2f3640, 5%);
+                        border-radius:10px;
+                        margin:3px;
+                        display:flex;
+                        justify-content:center;
+                        flex-direction:column;
+                        button{
+                            display:flex;
+                            justify-content:center;
+                            flex-direction:column;
+                            font-size:40px;
+                            width:100%;
+                            height:100%;
+                            vertical-align:center;
+                            background-color:transparent;
+                            color:white;
+                            border:none;
+                            cursor:pointer;
+
+                        }
+                        h1 {
+                            font-size:40px;
+                            margin:0;
+                            line-height:100%;
+                            text-align:center;
+                            width:100%;
+                        }
+                        &:hover{
+                            background-color: darken(#2f3640, 30%);
+                            cursor:pointer;
+                        }
+                    }
+                }
+            }
+        
+        ">>
+    >
+>>
